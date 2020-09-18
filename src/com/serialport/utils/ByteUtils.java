@@ -1,4 +1,4 @@
-package com.yang.serialport.utils;
+package com.serialport.utils;
 
 import java.nio.ByteBuffer;
 import java.util.Locale;
@@ -17,6 +17,15 @@ public class ByteUtils {
 	 *            十六进制字符串
 	 * @return byte[]
 	 */
+	public static byte[] hexStringToByteArray(String s) {
+		int len = s.length();
+		byte[] data = new byte[len / 2];
+		for (int i = 0; i < len; i += 2) {
+			data[i / 2] = (byte) ((Character.digit(s.charAt(i), 16) << 4)
+					+ Character.digit(s.charAt(i+1), 16));
+		}
+		return data;
+	}
 	public static byte[] hexStr2Byte(String hex) {
 		if (hex == null) {
 			return new byte[] {};

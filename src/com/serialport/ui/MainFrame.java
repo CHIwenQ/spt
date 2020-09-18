@@ -1,4 +1,4 @@
-package com.yang.serialport.ui;
+package com.serialport.ui;
 
 import java.awt.Color;
 import java.awt.GraphicsEnvironment;
@@ -20,9 +20,9 @@ import javax.swing.JTextArea;
 import javax.swing.event.PopupMenuEvent;
 import javax.swing.event.PopupMenuListener;
 
-import com.yang.serialport.manager.SerialPortManager;
-import com.yang.serialport.utils.ByteUtils;
-import com.yang.serialport.utils.ShowUtils;
+import com.serialport.manager.SerialPortManager;
+import com.serialport.utils.ShowUtils;
+import com.serialport.utils.ByteUtils;
 
 import gnu.io.PortInUseException;
 import gnu.io.SerialPort;
@@ -161,11 +161,10 @@ public class MainFrame extends JFrame {
 			}
 		}
 
+		mBaudrateChoice.addItem("1200");
+		mBaudrateChoice.addItem("2400");
+		mBaudrateChoice.addItem("4800");
 		mBaudrateChoice.addItem("9600");
-		mBaudrateChoice.addItem("19200");
-		mBaudrateChoice.addItem("38400");
-		mBaudrateChoice.addItem("57600");
-		mBaudrateChoice.addItem("115200");
 	}
 
 	/**
@@ -327,6 +326,7 @@ public class MainFrame extends JFrame {
 		// 以十六进制的形式发送数据
 		if (mDataHexChoice.isSelected()) {
 			SerialPortManager.sendToPort(mSerialport, ByteUtils.hexStr2Byte(data));
+
 		}
 	}
 

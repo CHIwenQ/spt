@@ -1,4 +1,4 @@
-package com.yang.serialport.utils;
+package com.serialport.utils;
 
 /**
  * 数组工具

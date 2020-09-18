@@ -1,4 +1,4 @@
-package com.yang.serialport.manager;
+package com.serialport.manager;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.TooManyListenersException;
 
-import com.yang.serialport.utils.ArrayUtils;
-import com.yang.serialport.utils.ShowUtils;
+import com.serialport.utils.ShowUtils;
+import com.serialport.utils.ArrayUtils;
 
 import gnu.io.CommPort;
 import gnu.io.CommPortIdentifier;
